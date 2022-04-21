@@ -8,7 +8,7 @@ it("should show an error message when title field is cleared", async () => {
 
   expect(screen.queryByText("Title is required")).not.toBeInTheDocument();
 
-  userEvent.clear(screen.getByLabelText("Title"));
+  await userEvent.clear(screen.getByLabelText("Title"));
 
   expect(await screen.findByText("Title is required")).toBeInTheDocument();
 });
